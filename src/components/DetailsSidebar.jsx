@@ -69,22 +69,6 @@ export default function DetailsSidebar({ open, city, datasets, selectedId, onSel
             <Tab label="PENDING (0)" />
             <Tab label="FINAL SIGN-OFF (0)" />
           </Tabs>
-          <Box sx={{ mt: 1.5 }}>
-            <OutlinedInput
-              size="small"
-              fullWidth
-              placeholder="Filter"
-              startAdornment={
-                <InputAdornment position="start">
-                  <SearchRounded fontSize="small" />
-                </InputAdornment>
-              }
-              sx={{
-                bgcolor: 'rgba(15, 23, 42, 0.35)',
-                '& fieldset': { borderColor: 'rgba(148, 163, 184, 0.22)' },
-              }}
-            />
-          </Box>
         </Box>
       ) : null}
 

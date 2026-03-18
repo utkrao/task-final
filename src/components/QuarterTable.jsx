@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   Box,
   Divider,
@@ -16,7 +17,8 @@ function fmt(v) {
   return String(v)
 }
 
-export default function QuarterTable({ data }) {
+export default React.memo(function QuarterTable({ data }) {
+  // Beginner: precompute columns
   const quarters = data.map((d) => ({ key: d.key, label: d.quarterShort }))
 
   const rows = [
@@ -109,5 +111,5 @@ export default function QuarterTable({ data }) {
       </TableContainer>
     </Box>
   )
-}
+})
 

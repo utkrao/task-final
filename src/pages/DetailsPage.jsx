@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {
   AppBar,
@@ -21,7 +21,10 @@ import ConsumptionPanel from '../components/ConsumptionPanel.jsx'
 export default function DetailsPage() {
   const navigate = useNavigate()
   const { cityId } = useParams()
-  const city = citiesResponse.find((c) => c.cityId === cityId) || null
+
+  // Stable refs - beginner opt to avoid re-finds
+  const getCity = useCallback((id) => citiesResponse.find((c) => c.cityId === id) || null, [])
+  const city = getCity(cityId)
 
   const datasets = useMemo(() => {
     const record = datasetsResponse.find((r) => r.cityId === cityId)

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box, Card, CardActionArea, Stack, Typography } from '@mui/material'
 import ArrowDropDownRounded from '@mui/icons-material/ArrowDropDownRounded'
 import ArrowDropUpRounded from '@mui/icons-material/ArrowDropUpRounded'
@@ -8,7 +9,8 @@ function TrendIcon({ trend }) {
   return <ArrowDropUpRounded sx={{ color: '#34d399', fontSize: 20 }} />
 }
 
-export default function CityWidget({ city, onClick }) {
+export default React.memo(function CityWidget({ city, onClick }) {
+  // Extract rows early - beginner simple vars
   const row1 = city.widgets?.forecastValue
   const row2 = city.widgets?.forecastPct
 
@@ -16,7 +18,7 @@ export default function CityWidget({ city, onClick }) {
     <Card
       variant="outlined"
       sx={{
-        width: 250,
+        width: 300,
         borderRadius: 2,
         overflow: 'hidden',
         borderColor: 'rgba(45, 212, 191, 0.35)',
@@ -69,5 +71,4 @@ export default function CityWidget({ city, onClick }) {
       </CardActionArea>
     </Card>
   )
-}
-
+})

@@ -22,7 +22,6 @@ function IntroZoom() {
     const zoom = map.getZoom()
     map.setView(center, Math.max(1, zoom - 0.8), { animate: false })
     map.flyTo(center, zoom + 0.9, { duration: 1.6, easeLinearity: 0.2 })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return null
