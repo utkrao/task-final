@@ -10,7 +10,7 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import { citiesResponse } from '../mock/data/dashboardData.js'
+import { citiesResponse } from '../data/dashboardData.js'
 import WorldMap from '../components/WorldMap.jsx'
 import CityWidgetDock from '../components/CityWidgetDock.jsx'
 

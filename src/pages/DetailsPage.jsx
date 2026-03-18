@@ -14,7 +14,7 @@ import {
 import ArrowBackRounded from '@mui/icons-material/ArrowBackRounded'
 import MenuRounded from '@mui/icons-material/MenuRounded'
 import MenuOpenRounded from '@mui/icons-material/MenuOpenRounded'
-import { citiesResponse, datasetsResponse } from '../mock/data/dashboardData.js'
+import { citiesResponse, datasetsResponse } from '../data/dashboardData.js'
 import DetailsSidebar from '../components/DetailsSidebar.jsx'
 import ConsumptionPanel from '../components/ConsumptionPanel.jsx'
 
