@@ -13,12 +13,11 @@ import {
   Tabs,
   Typography,
 } from '@mui/material'
-import SearchRounded from '@mui/icons-material/SearchRounded'
 
 const EXPANDED = 320
 const COLLAPSED = 84
 
-export default function DetailsSidebar({ open, city, datasets, selectedId, onSelect }) {
+function DetailsSidebar({ open, city, datasets, selectedId, onSelect }) {
   const width = open ? EXPANDED : COLLAPSED
 
   return (
@@ -115,3 +114,4 @@ export default function DetailsSidebar({ open, city, datasets, selectedId, onSel
   )
 }
 
+export default DetailsSidebar

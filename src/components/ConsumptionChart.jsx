@@ -12,7 +12,6 @@ import {
   YAxis,
 } from 'recharts'
 
-// Beginner helper - finds split between historical/forecast
 function pickSplitKey(data, historicalCount = 6) {
   const idx = Math.max(0, Math.min(historicalCount - 1, (data?.length || 0) - 1))
   return data?.[idx]?.quarterShort

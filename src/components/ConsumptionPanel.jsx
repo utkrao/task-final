@@ -12,7 +12,7 @@ import {
 import ConsumptionChart from './ConsumptionChart.jsx'
 import QuarterTable from './QuarterTable.jsx'
 
-export default function ConsumptionPanel({ city, dataset }) {
+function ConsumptionPanel({ city, dataset }) {
   const [showConsumption, setShowConsumption] = useState(true)
   const [showAIForecast, setShowAIForecast] = useState(true)
   const [showFinalForecast, setShowFinalForecast] = useState(true)
@@ -125,3 +125,4 @@ export default function ConsumptionPanel({ city, dataset }) {
   )
 }
 
+export default ConsumptionPanel

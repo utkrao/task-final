@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { Box } from '@mui/material'
 import LandingPage from './pages/LandingPage.jsx'
 import DetailsPage from './pages/DetailsPage.jsx'
@@ -9,7 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/details/:cityId" element={<DetailsPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Box>
   )

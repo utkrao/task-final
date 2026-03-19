@@ -38,4 +38,3 @@ export default function MiniSparkline({ data, color = '#2563eb' }) {
     </Box>
   )
 }
-

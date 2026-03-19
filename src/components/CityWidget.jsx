@@ -10,7 +10,6 @@ function TrendIcon({ trend }) {
 }
 
 export default React.memo(function CityWidget({ city, onClick }) {
-  // Extract rows early - beginner simple vars
   const row1 = city.widgets?.forecastValue
   const row2 = city.widgets?.forecastPct
 
