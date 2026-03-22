@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   AppBar,
@@ -10,17 +9,16 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { citiesResponse } from "../data/dashboardData.js";
+import { useDashboard } from "../contexts/DashboardContext.jsx";
 import WorldMap from "../components/WorldMap.jsx";
 import CityWidget from "../components/CityWidget.jsx";
 
 export default function LandingPage() {
   const navigate = useNavigate();
-
-  const cities = useMemo(() => citiesResponse, []);
+  const { cities } = useDashboard();
 
   return (
-    <Box sx={{ height: "100%", position: "relative", zIndex: 0, pointerEvents: 'none' }}>
+    <Box sx={{ height: "100%", position: "relative", zIndex: 0 }}>
       <WorldMap
         cities={cities}
         onCityClick={(cityId) => navigate(`/details/${cityId}`)}

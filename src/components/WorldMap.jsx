@@ -20,7 +20,7 @@ function IntroZoom() {
   useEffect(() => {
     const center = map.getCenter()
     const zoom = map.getZoom()
-    map.setView(center, Math.max(1, zoom - 0.8), { animate: false })
+    map.setView(center, Math.max(1.8, zoom - 0.8), { animate: false })
     map.flyTo(center, zoom + 0.9, { duration: 1.6, easeLinearity: 0.2 })
   }, [])
 
@@ -29,7 +29,7 @@ function IntroZoom() {
 
 export default function WorldMap({ cities, onCityClick }) {
   return (
-    <Box sx={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+    <Box sx={{ position: 'absolute', inset: 0, zIndex: 0, padding: 0 }}>
       <MapContainer
         center={[20, 0]}
         zoom={1.6}

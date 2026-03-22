@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {
   AppBar,
@@ -14,7 +14,7 @@ import {
 import ArrowBackRounded from '@mui/icons-material/ArrowBackRounded'
 import MenuRounded from '@mui/icons-material/MenuRounded'
 import MenuOpenRounded from '@mui/icons-material/MenuOpenRounded'
-import { citiesResponse, datasetsResponse } from '../data/dashboardData.js'
+import { useDashboard } from '../contexts/DashboardContext.jsx'
 import DetailsSidebar from '../components/DetailsSidebar.jsx'
 import ConsumptionPanel from '../components/ConsumptionPanel.jsx'
 
@@ -22,14 +22,9 @@ export default function DetailsPage() {
   const navigate = useNavigate()
   const { cityId } = useParams()
 
-  // Stable refs - beginner opt to avoid re-finds
-  const getCity = useCallback((id) => citiesResponse.find((c) => c.cityId === id) || null, [])
-  const city = getCity(cityId)
-
-  const datasets = useMemo(() => {
-    const record = datasetsResponse.find((r) => r.cityId === cityId)
-    return record?.cards || []
-  }, [cityId])
+  const { cities } = useDashboard()
+  const city = useMemo(() => cities.find((c) => c.cityId === cityId) || null, [cities, cityId])
+  const datasets = city?.cards || []
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [selectedDatasetId, setSelectedDatasetId] = useState(datasets[0]?.cardId || null)
 
