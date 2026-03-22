@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Card, CardActionArea, Stack, Typography } from '@mui/material'
-import ArrowDropDownRounded from '@mui/icons-material/ArrowDropDownRounded'
-import ArrowDropUpRounded from '@mui/icons-material/ArrowDropUpRounded'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 import MiniSparkline from './MiniSparkline.jsx'
 
 function TrendIcon({ trend }) {
-  if (trend === 'down') return <ArrowDropDownRounded sx={{ color: '#fb7185', fontSize: 20 }} />
-  return <ArrowDropUpRounded sx={{ color: '#34d399', fontSize: 20 }} />
+  if (trend === 'down') return <ArrowDownwardIcon sx={{ color: '#fb7185', fontSize: 20 }} />
+  return <ArrowUpwardIcon sx={{ color: '#34d399', fontSize: 20 }} />
 }
 
 export default React.memo(function CityWidget({ city, onClick }) {
