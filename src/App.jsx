@@ -8,13 +8,11 @@ import DetailsPage from "./pages/DetailsPage.jsx";
 function App() {
   return (
     <DashboardProvider cities={citiesResponse}>
-      <Box sx={{ height: "100%", minHeight: 0 }}>
+      <Box sx={{ height: "100%" }}>
         <AppBar
           elevation={0}
           sx={{
             bgcolor: "rgba(2, 6, 23)",
-            borderBottom: "1px solid",
-            borderColor: "rgba(148, 163, 184, 0.18)",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
