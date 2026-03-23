@@ -20,34 +20,34 @@ export default function LandingPage() {
 
   return (
     <Box sx={{ height: "100%", position: "relative", zIndex: 0 }}>
+      <AppBar
+        elevation={0}
+        sx={{
+          bgcolor: "rgba(2, 6, 23)",
+          borderBottom: "1px solid",
+          borderColor: "rgba(148, 163, 184, 0.18)",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: 72,
+          paddingX: 3,
+        }}
+      >
+        <Typography variant="subtitle1" fontWeight={900}>
+          Webapp
+        </Typography>
+        <Avatar
+          sx={{ width: 28, height: 28, bgcolor: "rgba(45, 212, 191, 0.18)" }}
+        >
+          U
+        </Avatar>
+      </AppBar>
+
       <WorldMap
         cities={cities}
         onCityClick={(cityId) => navigate(`/details/${cityId}`)}
       />
-
-      <AppBar
-        position="absolute"
-        elevation={0}
-        sx={{
-          bgcolor: "rgba(2, 6, 23, 0.55)",
-          backdropFilter: "blur(10px)",
-          borderBottom: "1px solid",
-          borderColor: "rgba(148, 163, 184, 0.18)",
-        }}
-      >
-        <Toolbar
-          sx={{ gap: 2, display: "flex", justifyContent: "space-between" }}
-        >
-          <Typography variant="subtitle1" fontWeight={900}>
-            Webapp
-          </Typography>
-          <Avatar
-            sx={{ width: 28, height: 28, bgcolor: "rgba(45, 212, 191, 0.18)" }}
-          >
-            U
-          </Avatar>
-        </Toolbar>
-      </AppBar>
 
       <Container
         maxWidth={false}
