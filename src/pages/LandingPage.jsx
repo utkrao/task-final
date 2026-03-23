@@ -2,13 +2,14 @@ import { useNavigate } from "react-router-dom";
 import {
   AppBar,
   Avatar,
-  Badge,
   Box,
   Container,
   Stack,
   Toolbar,
   Typography,
+  Chip,
 } from "@mui/material";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import { useDashboard } from "../contexts/DashboardContext.jsx";
 import WorldMap from "../components/WorldMap.jsx";
 import CityWidget from "../components/CityWidget.jsx";
@@ -34,20 +35,12 @@ export default function LandingPage() {
           borderColor: "rgba(148, 163, 184, 0.18)",
         }}
       >
-        <Toolbar sx={{ gap: 2 }}>
+        <Toolbar
+          sx={{ gap: 2, display: "flex", justifyContent: "space-between" }}
+        >
           <Typography variant="subtitle1" fontWeight={900}>
             Webapp
           </Typography>
-          <Box sx={{ flex: 1 }} />
-          <Badge
-            color="info"
-            badgeContent={2}
-            sx={{ "& .MuiBadge-badge": { fontWeight: 800 } }}
-          >
-            <Typography variant="caption" color="text.secondary" sx={{ pr: 1 }}>
-              There are 2 to action items.
-            </Typography>
-          </Badge>
           <Avatar
             sx={{ width: 28, height: 28, bgcolor: "rgba(45, 212, 191, 0.18)" }}
           >
@@ -73,12 +66,25 @@ export default function LandingPage() {
         <Stack
           direction="row"
           alignItems="center"
-          justifyContent="space-between"
+          justifyContent="start"
+          gap={2}
           sx={{ pointerEvents: "auto", mb: 1.5 }}
         >
           <Typography variant="h5" fontWeight={900}>
             Hello User,
           </Typography>
+          <Chip
+            icon={<InfoOutlinedIcon />}
+            label="There are 2 to action items."
+            sx={{
+              backgroundColor: "#fefefe",
+              color: "#000000",
+              fontWeight: 500,
+              "& .MuiChip-icon": {
+                color: "#000000",
+              },
+            }}
+          />
         </Stack>
         <Box
           sx={{
