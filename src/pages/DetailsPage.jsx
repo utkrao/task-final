@@ -60,9 +60,14 @@ export default function DetailsPage() {
             borderColor: 'rgba(148, 163, 184, 0.18)',
           }}
         >
-          <Toolbar sx={{ gap: 1.25, minHeight: 56 }}>
-            <IconButton onClick={() => setSidebarOpen((v) => !v)} aria-label="Toggle sidebar">
-              <MenuRounded />
+          <Toolbar sx={{ gap: 1.25, minHeight: 56, transform: 'translateX(-30px)' }}>
+            <IconButton aria-label="Collapse sidebar" onClick={() => setSidebarOpen((v) => !v)}>
+              <MenuOpenRounded
+                sx={{
+                  transform: sidebarOpen ? 'rotate(0deg)' : 'rotate(180deg)',
+                  transition: 'transform 180ms ease',
+                }}
+              />
             </IconButton>
             <IconButton onClick={() => navigate('/')} edge="start" aria-label="Back">
               <ArrowBackRounded />
@@ -99,14 +104,6 @@ export default function DetailsPage() {
                   fontWeight: 900,
                 }}
               />
-              <IconButton aria-label="Collapse sidebar" onClick={() => setSidebarOpen((v) => !v)}>
-                <MenuOpenRounded
-                  sx={{
-                    transform: sidebarOpen ? 'rotate(0deg)' : 'rotate(180deg)',
-                    transition: 'transform 180ms ease',
-                  }}
-                />
-              </IconButton>
             </Stack>
           </Toolbar>
         </AppBar>
